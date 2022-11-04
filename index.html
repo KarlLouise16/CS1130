@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+<body style="background-color:powderblue;">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+<script defer src="https://pyscript.net/latest/pyscript.js"></script>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+
+
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+body {font-size:16px;}
+.w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
+.w3-half img:hover{opacity:1}
+</style>
+</head>
+<body>
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-blue-grey w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+  <div class="w3-container">
+    <h3 class="w3-padding-64"><b>Karl Louise<br>Campos</b></h3>
+  </div>
+  <div class="w3-bar-block">
+    <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Home</a> 
+    <a href="#Conversion" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Conversion</a> 
+    <a href="#Income Tax Calculator" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Income Tax Calculator</a> 
+    <a href="#Factorial, Sum and Average" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Factorial, Sum and Average</a> 
+    <a href="#Simple Payroll" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Simple Payroll</a> 
+  </div>
+</nav>
+
+<!-- Top menu on small screens -->
+<header class="w3-container w3-top w3-hide-large w3-blue-grey w3-xlarge w3-padding">
+  <a href="javascript:void(0)" class="w3-button w3-blue-grey w3-margin-right" onclick="w3_open()">☰</a>
+  <span>Karl Louise M. Campos</span>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:340px;margin-right:40px">
+
+  <!-- Header -->
+  <div class="w3-container" style="margin-top:80px" id="Conversion">
+    <h1 class="w3-xlarge"><b>CS 1130 - Introduction to Computing</b></h1>
+    <h1 class="w3-large w3-text-blue-grey"><b>Conversion.</b></h1>
+    <hr style="width:120px;border:2px solid white" class="w3-round">
+  </div>
+  
+  <!-- CONVERSION -->
+  <div>
+      <style>
+          .p1 {
+          font-family: "Poppins", sans-serif
+          }
+          .p1 {font-size: 20px}
+          .p2 {
+          font-family: "Poppins", sans-serif
+          }
+          .p2 {font-size: 18px}
+          </style>
+          <p class="p1"><b><i>Fahrenheit to Celsius:</b></i> </p>
+      
+          <p>
+            <label><p class="p2">Fahrenheit</p></label>
+            <input id="inputFahrenheit" type="number" placeholder="Fahrenheit" oninput="FahrenToCelc(this.value)" onchange="FahrenToCelc(this.value)">
+          </p>
+          <p>Celcius: <span id="outputCelcius"></span></p>    
+          <script>
+          function FahrenToCelc(value5) {
+            value5 = parseFloat(value5);
+            document.getElementById("outputCelcius").innerHTML=(value5-32)/1.8;
+          }
+        </script>
+    </div>
+<hr style="width:1000px;border:1px solid white" class="w3-round">
+  <div>
+    <p class="p1"><b><i>Celsius to Fahrenheit:</b></i></p>
+  <div style= "padding:10px">
+ 
+    <p>
+      <label>Celsius</label>
+      <input id="inputCelsius" type="number" placeholder="Celsius" oninput="temperatureConverter(this.value)" onchange="temperatureConverter(this.value)">
+    </p>
+    <p>Fahrenheit: <span id="outputFahrenheit"></span></p>
+    <script>
+    function temperatureConverter(valNum) {
+      valNum = parseFloat(valNum);
+      document.getElementById("outputFahrenheit").innerHTML=(valNum*1.8)+32;
+    }
+    </script>
+  </div>
+<hr style="width:1000px;border:1px solid white" class="w3-round">
+  <div>
+      <p class="p1"><b><i>Meters to Feet:</b></i></p>
+
+      <p>
+        <label>Meters</label>
+        <input id="inputMeters" type="number" placeholder="Meters" oninput="MtoF(this.value)" onchange="MtoF(this.value)">
+      </p>
+      <p>Feet: <span id="outputFeet"></span></p>
+
+      <script>
+      function MtoF(value3) {
+        document.getElementById("outputFeet").innerHTML=value3*3.2808;
+      }
+      </script>
+    </div>
+<hr style="width:1000px;border:1px solid white" class="w3-round"> 
+  <div>
+    <p class="p1"><b><i>Feet to Meters:</b></i></p>
+
+    <p>
+      <label>Feet</label>
+      <input id="inputFeet" type="number" placeholder="Feet" oninput="FtoM(this.value)" onchange="FtoM(this.value)">
+    </p>
+    <p>Meters: <span id="outputMeters"></span></p>
+
+    <script>
+    function FtoM(value4) {
+      document.getElementById("outputMeters").innerHTML=value4/3.2808;
+    }
+    </script>
+
+  <!-- Income Tax Calculator -->
+<hr style="width:1000px;border:1px solid white" class="w3-round"> 
+<hr style="width:1000px;border:1px solid white" class="w3-round">
+<div class="w3-container" style="margin-top:80px" id="Income Tax Calculator">
+    <h1 class="w3-large w3-text-blue-grey"><b>Income Tax Calculator.</b></h1>
+    <hr style="width:200px;border:2px solid white" class="w3-round">
+  </div>
+
+  
+<p class="p1"><b><i>Income Tax Calculator:</b></i></p>
+
+<label>Enter taxable income:</label>
+<input type="text" id="income" />
+<input type="button" value="Calculate" name="calculate" id="calculate" /><br><br>
+
+<label>Income tax owed:</label>
+<input type="text" id="tax"><br>
+
+
+<script>
+var $ = function (id) {
+return document.getElementById(id);
+};
+
+
+var processEntry = function() {
+var total;
+var income = parseFloat( $("income").value );
+
+
+$("tax").value = calcTaxes(income);
+
+
+
+function calcTaxes(income){
+var calculate = 0;
+if (income <= 0){
+alert ("Please enter a valid number greater than zero.")};
+if (income > 0 && income <= 250_000){
+tax = (income * 0);
+}else if (income <= 400_000 && income > 250_000) {
+tax = (income - 250_000) * 0.20;
+}else if (income <= 800_000 && income > 400_000) {
+tax = (income - 400_000) * 0.25 + 30_000;
+}else if (income <= 2_000_000 && income > 800_000) {
+tax = (income - 800_000) * 0.30 + 130_000;
+}else if (income <= 8_000_000 && income > 2_000_000) {
+tax = (income - 2_000_000) * 0.32 + 490_000 ;
+}else if (income > 8_000_000) {
+tax = (income - 8_000_000) * 0.35 + 2_410_000 ;
+}
+
+tax = tax.toFixed(2);
+
+return tax;
+
+}
+}
+
+
+window.onload = function () {
+
+$("calculate").onclick = processEntry;
+
+};    
+</script>      
+  </div>  
+  <!-- Factorial, Sum and Average -->
+<hr style="width:1000px;border:1px solid white" class="w3-round"> 
+<hr style="width:1000px;border:1px solid white" class="w3-round"> 
+<div class="w3-container" style="margin-top:80px" id="Factorial, Sum and Average">
+    <h1 class="w3-large w3-text-blue-grey"><b>Factorial, Sum and Average.</b></h1>
+    <hr style="width:240px;border:2px solid white" class="w3-round">
+  </div>
+
+  <div><p>
+        <p class="p1"><b><i>Find Factorial:</b></i></p>
+    <input type="text" id="num"/>
+    <input type="button" value="Factorial" onclick="factorial()"/>
+
+    <p>Result: <span id="Result"></span></p>
+
+
+    <div id="answer"></div>
+
+    <script>
+
+    function factorial() {
+
+    var num = document.getElementById("num").value;
+    var fact = 1, i = 1;
+
+    while(i <= num) {
+      fact = fact * i;
+      i++;
+    }
+
+    document.getElementById("Result").innerHTML = fact;
+    }
+    </script>
+    
+  </div>
+<hr style="width:1000px;border:1px solid white" class="w3-round"> 
+
+   <p>
+    <label><p class="p2">Sum of the First Natural Numbers</p></label>
+    <input id="inputNumber" type="number" placeholder="Number" oninput="Number(this.value)" onchange="Number(this.value)">
+    </p>
+    <p>Result: <span id="outputNumber"></span></p>
+    
+    <script>
+      function Number(){
+      var number = document.getElementById("inputNumber")
+     
+
+    let sum = 0, i = 1;
+
+    while(i <= 1000){
+      
+      sum += i;
+      i++
+      if i = number{
+        break
+        }
+    }
+
+    document.getElementById("outputNumber").innerHTML = sum;
+    }
+    </script> 
+
+
+<hr style="width:1000px;border:1px solid white" class="w3-round">   
+
+  
+
+<!-- End page content -->
+</div>
+
+<!-- W3.CSS Container -->
+
+<script>
+// Script to open and close sidebar
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("myOverlay").style.display = "block";
+}
+ 
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("myOverlay").style.display = "none";
+}
+
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+</script>
+
+</body>
+</html>
